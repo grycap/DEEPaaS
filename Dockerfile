@@ -9,10 +9,6 @@ RUN apt-get update && \
 RUN apt-get install -y --no-install-recommends \
         git \
         curl \
-        python-netifaces \
-        python-setuptools \
-        python-pip \
-        python-wheel \
         python3-netifaces \
         python3-setuptools \
         python3-pip \
@@ -31,9 +27,7 @@ RUN apt-get clean && \
     rm -rf /root/.cache/pip/* && \
     rm -rf /tmp/*
 
-## We can use pip or pip3, depending on the python version that we want to use
-RUN pip3 install 'deepaas>=0.4.0' && \
-    pip install 'deepaas>=0.4.0'
+RUN pip3 install 'deepaas>=1.0.0'
 
 EXPOSE 5000
 
